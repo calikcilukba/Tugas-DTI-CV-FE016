@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import picture from '../assets/chalik.png';
+import Modal from '../modal';
 
 const About_me = () => {
   return (
@@ -33,12 +34,7 @@ const About_me = () => {
             </div>
             <div className="col s12" style={{ margin: '30px 0px' }}>
               <a class="col s5 waves-effect waves-light btn devide">HIRE ME</a>
-              <a
-                class="col s5 waves-effect waves-light btn indigo lighten-5 devide"
-                style={{ color: 'black' }}
-              >
-                SEE MY RESUME
-              </a>
+              <Modal />
             </div>
           </div>
         </div>
