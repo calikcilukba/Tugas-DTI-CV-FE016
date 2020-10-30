@@ -12,8 +12,8 @@ const Covid = () => {
   };
   return (
     <layout>
-      <button onClick={handleToggle}>Toggle</button>
-      <myFunc />
+      {/* <button onClick={handleToggle}>Toggle</button>
+      <myFunc /> */}
     </layout>
   );
 };
