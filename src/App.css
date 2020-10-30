@@ -17,9 +17,27 @@ body {
 .sns {
   margin-top: 10px;
   height: 40px;
+  padding: 5px;
 }
 .box {
   height: 100px;
   width: 100px;
   padding: 20px;
+}
+
+.iam {
+  margin-top: -20px;
+  color: grey;
+  font-size: 90px;
+}
+
+.devide {
+  margin: 0px 30px;
+}
+
+.notfound {
+  padding: 110px 0px;
+}
+.cv {
+  height: 900px;
 }

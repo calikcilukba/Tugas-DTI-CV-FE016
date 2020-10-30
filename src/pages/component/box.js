@@ -5,13 +5,13 @@ const Box = (props) => {
     <div class="col s12 m4">
       <div class="card">
         <div class="card-image">
-          <img class="box" src={props.obj.image}></img>
+          <img class="box" src={props.obj.image} alt={props.obj.alt}></img>
           <span class="card-title" style={{ color: 'black' }}>
             {props.obj.title}
           </span>
-          <a class="btn-floating halfway-fab waves-effect waves-light red">
+          <button class="btn-floating halfway-fab waves-effect waves-light red">
             <i class="material-icons">+</i>
-          </a>
+          </button>
         </div>
         <div class="card-content weight-400">
           <p>{props.obj.text}</p>
