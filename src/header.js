@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+// import { Link } from 'react-router-dom';
 import routes from './config/routes';
 
 const Header = () => {
@@ -15,8 +15,8 @@ const Header = () => {
             {listMenu.reverse().map((name) => {
               if (name.isPublic) {
                 return (
-                  <li>
-                    <a href={`${name.path}`} key={name.path}>
+                  <li key={name.path}>
+                    <a href={`${name.path}`}>
                       <div class="weight-400" style={{ color: 'black' }}>
                         {name.name}
                       </div>

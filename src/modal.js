@@ -36,13 +36,13 @@ class Modal extends Component {
   render() {
     return (
       <div>
-        <a
+        <button
           className="col s5 waves-effect waves-light btn indigo lighten-5 devide btn modal-trigger"
           data-target="modal1"
           style={{ color: 'black' }}
         >
           SEE MY Creative CV
-        </a>
+        </button>
 
         <div
           ref={(Modal) => {
@@ -57,10 +57,17 @@ class Modal extends Component {
                         modal-fixed-footer to the "modal" div*/}
           <div className="modal-content">
             <h4 style={{ margin: 'auto' }}> My Creative CV</h4>
-            <img class="cv" style={{ margin: 'auto' }} src={CvImage}></img>
+            <img
+              class="cv"
+              style={{ margin: 'auto' }}
+              src={CvImage}
+              alt={CvImage}
+            ></img>
           </div>
           <div className="modal-footer">
-            <a className="modal-close waves-effect waves-red btn-flat">Close</a>
+            <button className="modal-close waves-effect waves-red btn-flat">
+              Close
+            </button>
           </div>
         </div>
       </div>

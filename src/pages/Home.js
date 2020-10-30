@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { useState } from 'react';
 import picture from '../assets/chalik.png';
 import imgCode from '../assets/code.svg';
 import imgDesain from '../assets/desain.png';
@@ -7,22 +7,37 @@ import imgFacebook from '../assets/Facebook.svg';
 import imgLinkedin from '../assets/LinkedIn.svg';
 import imgDribble from '../assets/Dribbble.svg';
 import Box from './component/box';
-import { render } from '@testing-library/react';
+import useCounter from './CustomHook/useCounter';
+
 const About_me = () => {
+  const [like, handleLike] = useCounter(0);
+  const [dislike, handleDislike] = useCounter(0);
+  const [state, setState] = useState({
+    subscribe: false,
+  });
+  const handleSubscribe = () => {
+    setState({
+      subscribe: !state.subscribe,
+    });
+  };
+
   const contact = [
     {
       name: 'Facebook',
       image: imgFacebook,
+      alt: 'facebook',
       link: 'https://www.facebook.com/chalik.froza/',
     },
     {
       name: 'Dribbble',
       image: imgDribble,
+      alt: 'dribbble',
       link: 'https://dribbble.com/fachalik',
     },
     {
       name: 'LinkedIn',
       image: imgLinkedin,
+      alt: 'linked',
       link: 'https://www.linkedin.com/in/f-a-chalik-a373731a5/',
     },
   ];
@@ -30,18 +45,21 @@ const About_me = () => {
     {
       title: 'Designer',
       image: imgDesain,
+      alt: 'desain',
       text:
         'Lorem Ipsum is simply dummy text of the printing and typesetting industry.',
     },
     {
       title: 'Front End Developer',
       image: imgCode,
+      alt: 'frontend',
       text:
         'Lorem Ipsum is simply dummy text of the printing and typesetting industry.',
     },
     {
       title: 'Ui Designer',
       image: imgUi,
+      alt: 'ui',
       text:
         'Lorem Ipsum is simply dummy text of the printing and typesetting industry.',
     },
@@ -79,12 +97,51 @@ const About_me = () => {
                   return (
                     <div className="col s1">
                       <a href={contact.link}>
-                        <img class="sns" src={contact.image}></img>
+                        <img
+                          class="sns"
+                          src={contact.image}
+                          alt={contact.alt}
+                        ></img>
                       </a>
                     </div>
                   );
                 })}
               </div>
+            </div>
+            <div className="col s12">
+              <p className="row">
+                <button
+                  className="col s3 waves-effect waves-light btn indigo lighten-5 devide btn modal-trigger"
+                  data-target="modal1"
+                  style={{ color: 'black' }}
+                  onClick={handleSubscribe}
+                >
+                  Subscribe
+                </button>
+                <span>{JSON.stringify(state.subscribe)}</span>
+              </p>
+              <p className="row">
+                <button
+                  className="col s3 waves-effect waves-light btn indigo lighten-5 devide btn modal-trigger"
+                  data-target="modal1"
+                  style={{ color: 'black' }}
+                  onClick={handleLike}
+                >
+                  Like
+                </button>
+                <span>{like}</span>
+              </p>
+              <p className="row">
+                <button
+                  className="col s3 waves-effect waves-light btn indigo lighten-5 devide btn modal-trigger"
+                  data-target="modal1"
+                  style={{ color: 'black' }}
+                  onClick={handleDislike}
+                >
+                  Dislike
+                </button>
+                <span>{dislike}</span>
+              </p>
             </div>
           </div>
         </div>

@@ -1,4 +1,4 @@
-import { Home, About_me, Experiance, Skills } from '../pages';
+import { Home, About_me, Experiance, Skills, Covid } from '../pages';
 
 const routes = [
   // {
@@ -6,7 +6,12 @@ const routes = [
   //   component: ProfileId,
   //   isPublic: false,
   // },
-
+  {
+    path: '/covid',
+    component: Covid,
+    name: 'COVID',
+    isPublic: true,
+  },
   {
     path: '/experiance',
     component: Experiance,
@@ -31,11 +36,6 @@ const routes = [
     name: 'Home',
     isPublic: false,
   },
-  // {
-  //   path: '/login',
-  //   component: Login,
-  //   isPublic: true,
-  // },
 
   // {
   //   path: '/',

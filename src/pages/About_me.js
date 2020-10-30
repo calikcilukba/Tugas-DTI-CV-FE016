@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import picture from '../assets/chalik.png';
 import Modal from '../modal';
 
@@ -7,7 +7,7 @@ const About_me = () => {
     <div className="container">
       <div className="row">
         <div className="col s6">
-          <img src={picture}></img>
+          <img src={picture} alt={picture}></img>
         </div>
         <div className="col s6">
           <div className="row">
@@ -33,7 +33,9 @@ const About_me = () => {
               </p>
             </div>
             <div className="col s12" style={{ margin: '30px 0px' }}>
-              <a class="col s5 waves-effect waves-light btn devide">HIRE ME</a>
+              <button class="col s5 waves-effect waves-light btn devide">
+                HIRE ME
+              </button>
               <Modal />
             </div>
           </div>
